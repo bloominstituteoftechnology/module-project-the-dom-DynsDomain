@@ -30,13 +30,13 @@ beforeEach(() => {
 })
 
 describe('Sprint 5 Module', () => {
-  describe('Task 1 - Class name of widget', () => {
+  describe.('Task 1 - Class name of widget', () => {
     test('👉 [1] All 4 widgets have a "widget" class name', () => {
       expect(document.querySelectorAll('section .widget')).toHaveLength(4)
     })
   })
   describe('Task 2 - Quote of the Day widget', () => {
-    describe(`The best thing about a boolean...
+    describe.only(`The best thing about a boolean...
       Anonymous in an unknown date`, () => {
       beforeAll(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.6)
