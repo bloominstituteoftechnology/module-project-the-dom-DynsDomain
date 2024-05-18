@@ -35,7 +35,7 @@ describe('Sprint 5 Module', () => {
       expect(document.querySelectorAll('section .widget')).toHaveLength(4)
     })
   })
-  describe.only('Task 2 - Quote of the Day widget', () => {
+  describe('Task 2 - Quote of the Day widget', () => {
     describe(`The best thing about a boolean...
       Anonymous in an unknown date`, () => {
       beforeAll(() => {
@@ -79,7 +79,7 @@ describe('Sprint 5 Module', () => {
     })
   })
 
-  describe('Task 4 - Countdown widget', () => {
+  describe.only('Task 4 - Countdown widget', () => {
     test('👉 [7] Counts from "T-minus 5..." to "Liftoff! 🚀"', () => {
       screen.getByText('Countdown')
       screen.getByText('T-minus 5...')
