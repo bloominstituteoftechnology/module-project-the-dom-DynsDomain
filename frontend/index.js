@@ -66,7 +66,33 @@ const id = setInterval(() => {
 }, 1000)
   // 👉 TASK 5 - Build a "Friends" widget
   //  ✨ add your code here
-
+  const person = people[Math.floor(Math.random() * people.length)]
+  const personParagraph = document.createElement('p')
+  document.querySelector('.friends').appendChild(personParagraph)
+  const year = person.dateOfBirth.split('-')[0]
+  let sentence = `${person.fname} ${person.lname} was born in ${year} and `
+  
+  if(!person.friends.length) {
+    sentence += 'has no friends.'
+  } else {
+    sentence += 'is friends with '
+    for (let idx = 0; idx < person.friends.length; idx++) {
+      const friendId = person.friends[idx]
+      const friend = people.find(p => p.id === friendId)
+      const fullName = `${friend.fname} ${friend.lname}`
+      console.log(fullName)
+      let isLastIdx = idx === person.friends.length - 1
+      let isNextToLastIdx = idx === person.friends.length - 2
+      if (isLastIdx) {
+        sentence += `${fullName}.`
+      } else if (isNextToLastIdx) {
+          sentence += `${fullName} and `
+      } else {
+        sentence += `${fullName}, `
+      }
+    }
+  }
+  personParagraph.textContent = sentence
   // 👉 TASK 6 - Make it so user can tab through the widgets
   //  ✨ add your code here
 
