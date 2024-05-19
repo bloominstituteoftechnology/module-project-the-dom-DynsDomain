@@ -50,7 +50,20 @@ document.querySelector('.corporatespeak').appendChild(paragraph)
 
   // 👉 TASK 4 - Build a "Countdown" widget
   //  ✨ add your code here
+const countdownWidget = document.querySelector('.countdown')
+let count = 5
+const countdown = document.createElement('p')
+countdown.textContent = `T-minus ${count}...`
+countdownWidget.appendChild(countdown)
 
+const id = setInterval(() => {
+  if (count === 1) {
+    countdown.textContent = 'Liftoff! 🚀'
+    clearInterval(id)
+  } else {
+    countdown.textContent = `T-minus ${--count}...`
+  }
+}, 1000)
   // 👉 TASK 5 - Build a "Friends" widget
   //  ✨ add your code here
 
