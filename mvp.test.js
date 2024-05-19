@@ -130,7 +130,7 @@ describe('Sprint 5 Module', () => {
       })
     })
   })
-  describe.only('Task 6 - Tabbing through widgets', () => {
+  describe('Task 6 - Tabbing through widgets', () => {
     test('👉 [11] Can tab through widgets', () => {
       const widgets = document.querySelectorAll('.widget')
       expect(widgets).toHaveLength(4)
